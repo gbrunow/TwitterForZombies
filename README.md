@@ -13,3 +13,4 @@ Application built during Ruby on Rails course "[Rails for Zombies 2](http://rail
 
 ## References
 * [Ruby on Rails Tutorial, 3rd Edition](https://www.softcover.io/email-capture/28fdb94f/ruby_on_rails_tutorial_3rd_edition)
+* [Rails Guides](http://guides.rubyonrails.org)

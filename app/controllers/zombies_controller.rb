@@ -4,7 +4,9 @@ class ZombiesController < ApplicationController
   # GET /zombies
   # GET /zombies.json
   def index
-    @zombies = Zombie.all
+    @zombies = Zombie.includes(:brain).all
+    @rotting_zombies = Zombie.rotting
+    @fresh_zombies = Zombie.fresh
   end
 
   # GET /zombies/1
@@ -69,6 +71,6 @@ class ZombiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def zombie_params
-      params.require(:zombie).permit(:name, :bio, :age)
+      params.require(:zombie).permit(:name, :bio, :age, :rotting, :email)
     end
 end

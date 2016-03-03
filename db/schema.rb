@@ -11,6 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302233636) do
+ActiveRecord::Schema.define(version: 20160303024518) do
+
+  create_table "assignments", force: :cascade do |t|
+    t.integer "zombie_id"
+    t.integer "role_id"
+  end
+
+  add_index "assignments", ["role_id"], name: "index_assignments_on_role_id"
+  add_index "assignments", ["zombie_id"], name: "index_assignments_on_zombie_id"
+
+  create_table "brains", force: :cascade do |t|
+    t.integer  "zombie_id"
+    t.string   "status"
+    t.string   "flavor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "brains", ["zombie_id"], name: "index_brains_on_zombie_id"
+
+  create_table "roles", force: :cascade do |t|
+    t.string "title"
+  end
+
+  create_table "zombies", force: :cascade do |t|
+    t.string   "name"
+    t.text     "bio"
+    t.string   "email"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "age"
+    t.boolean  "rotting",    default: false
+  end
 
 end

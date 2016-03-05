@@ -1,6 +1,9 @@
 # TwitterForZombies
 Application built during Ruby on Rails course "[Rails for Zombies 2](http://railsforzombiestwo.codeschool.com/)", [Code School](http://codeschool.com/)
 
+**Hey you!** Be aware that the course uses **Rails 3**, if you install a newer version some things will have changed.
+I've installed **Rails 4** and am doing just fine, though.
+
 ## Learning Ruby on Rails
 * Head over to [TryRuby.org](http://tryruby.org) and get familiar with ruby on a short interactive tutorial
 * Take the [Rails for Zombies](http://railsforzombies.org/) course

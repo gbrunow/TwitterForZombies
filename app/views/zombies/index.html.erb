@@ -11,6 +11,7 @@
       <th>Email</th>
       <th>Age</th>
       <th>Rotting</th>
+      <th>Decomposition Status</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,6 +25,7 @@
         <td><%= zombie.email %></td>
         <td><%= zombie.age %></td>
         <td><%= zombie.rotting %></td>
+        <td><%= zombie.decomp %></td>
         <td><%= link_to 'Show', zombie %></td>
         <td><%= link_to 'Edit', edit_zombie_path(zombie) %></td>
         <td><%= link_to 'Destroy', zombie, method: :delete, data: { confirm: 'Are you sure?' } %></td>

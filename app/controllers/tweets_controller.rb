@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
   before_filter :get_zombie, only: [:index, :show, :create, :new, :edit]
 
-  
+
 
   # GET /tweets
   # GET /tweets.json

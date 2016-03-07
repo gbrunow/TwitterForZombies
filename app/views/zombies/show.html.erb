@@ -25,5 +25,10 @@
   <%= @zombie.rotting %>
 </p>
 
+<p>
+  <strong>Decomposition Status:</strong>
+  <%= @zombie.decomp %>
+</p>
+
 <%= link_to 'Edit', edit_zombie_path(@zombie) %> |
 <%= link_to 'Back', zombies_path %>

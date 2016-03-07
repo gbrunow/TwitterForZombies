@@ -8,6 +8,7 @@ class Zombie < ActiveRecord::Base
   validates :name, presence: true, length: { minimum: 3}
 
   before_save :make_rotting
+  after_save :decomp_change_notification, if: :decomp_changed?
 
   scope :rotting, -> {
     where(:rotting => true)
@@ -21,7 +22,12 @@ class Zombie < ActiveRecord::Base
     order("created_at desc").limit(3)
   }
 
-  def make_rotting
-    self.rotting = true if age > 20
-  end
+  private
+    def make_rotting
+      self.rotting = true if age > 20
+    end
+
+    def decomp_change_notification
+      ZombieMailer.decomp_change(self).deliver
+    end
 end
